@@ -1,79 +1,33 @@
-/* General Styles */
 body {
-    font-family: 'Arial', sans-serif; /* Fuente sencilla */
-    background-color: #f9f9f9; /* Fondo claro */
+    font-family: Arial, sans-serif;
+    background-color: #e6f7ff; /* Color de fondo */
     color: #333; /* Color del texto */
     margin: 0;
-    padding: 40px;
-    line-height: 1.6; /* Espaciado entre líneas */
+    padding: 20px;
 }
 
 h1 {
-    color: #005f73; /* Color del título */
-    font-size: 2em; /* Tamaño del título */
-    margin-bottom: 20px; /* Margen inferior */
-}
-
-h2 {
-    color: #005f73; /* Color para subtítulos */
-    font-size: 1.5em; /* Tamaño del subtítulo */
-    margin-top: 30px; /* Margen superior */
-    margin-bottom: 10px; /* Margen inferior */
-}
-
-label {
-    display: block; /* Hace que la etiqueta ocupe todo el ancho */
-    margin: 10px 0; /* Margen vertical */
-}
-
-input[type="text"] {
-    width: 100%; /* Ancho completo */
-    padding: 10px; /* Relleno */
-    border: 1px solid #ddd; /* Borde claro */
-    border-radius: 5px; /* Bordes redondeados */
-    margin-bottom: 20px; /* Margen inferior */
-    transition: border-color 0.3s; /* Transición suave */
-}
-
-input[type="text"]:focus {
-    border-color: #005f73; /* Color del borde al enfocar */
-    outline: none; /* Sin contorno */
+    color: #004080; /* Color del título */
 }
 
 button {
-    background-color: #008891; /* Color de fondo del botón */
-    color: white; /* Color del texto */
-    border: none; /* Sin borde */
-    padding: 12px 20px; /* Relleno del botón */
-    cursor: pointer; /* Cursor pointer */
-    border-radius: 5px; /* Bordes redondeados */
-    font-size: 16px; /* Tamaño de texto */
-    transition: background-color 0.3s; /* Transición suave */
-    display: inline-block; /* Para el espaciado */
+    background-color: #0080ff; /* Color del botón */
+    color: white; /* Color del texto del botón */
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
 button:hover {
-    background-color: #005f73; /* Color del botón al pasar el ratón */
-}
-
-h3 {
-    color: #333; /* Color para el historial */
-    margin-top: 30px; /* Margen superior */
-}
-
-ul {
-    padding-left: 20px; /* Relleno a la izquierda */
-}
-
-li {
-    margin-bottom: 10px; /* Margen inferior para los elementos de la lista */
+    background-color: #005bb5; /* Color del botón al pasar el ratón */
 }
 
 .dark-theme {
-    background-color: #333; /* Fondo oscuro para el tema oscuro */
-    color: white; /* Texto blanco en el tema oscuro */
+    background-color: #333; /* Color de fondo en tema oscuro */
+    color: white; /* Color del texto en tema oscuro */
 }
 
 .dark-theme button {
-    background-color: #555; /* Botón en tema oscuro */
+    background-color: #555; /* Color del botón en tema oscuro */
 }
