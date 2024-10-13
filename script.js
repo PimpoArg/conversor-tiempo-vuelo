@@ -67,5 +67,12 @@ document.getElementById('toggleThemeBtn').onclick = function() {
     document.body.classList.toggle('dark-theme');
 }
 
+// Escuchar el evento 'keypress' en el campo de entrada
+document.getElementById('hhmm').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') { // Verifica si la tecla presionada es 'Enter'
+        convertirTiempo(); // Llama a la función de conversión
+    }
+});
+
 // Cargar historial al cargar la página
 window.onload = mostrarHistorial;
