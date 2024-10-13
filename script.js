@@ -38,6 +38,12 @@ function convertirTiempo() {
     // Guardar en el historial
     const historial = JSON.parse(localStorage.getItem('historial')) || [];
     historial.push(`HHMM: ${hhmm} => Decimal: ${tiempo_decimal.toFixed(1)}`);
+    
+    // Limitar el historial a un máximo de 3 entradas
+    if (historial.length > 3) {
+        historial.shift(); // Elimina la entrada más antigua
+    }
+    
     localStorage.setItem('historial', JSON.stringify(historial));
     mostrarHistorial();
 }
@@ -46,11 +52,14 @@ function mostrarHistorial() {
     const historial = JSON.parse(localStorage.getItem('historial')) || [];
     const ul = document.getElementById('historial');
     ul.innerHTML = '';
-    historial.forEach(item => {
+    
+    // Mostrar solo hasta 3 entradas
+    const maxEntries = Math.min(historial.length, 3); // Se asegura de que no se muestren más de 3
+    for (let i = 0; i < maxEntries; i++) {
         const li = document.createElement('li');
-        li.textContent = item;
+        li.textContent = historial[i];
         ul.appendChild(li);
-    });
+    }
 }
 
 document.getElementById('convertirBtn').onclick = convertirTiempo;
