@@ -1,3 +1,5 @@
+let historial = [];
+
 function convertir_a_decimal(horas, minutos) {
     let decimal = 0;
 
@@ -18,45 +20,37 @@ function convertir_a_decimal(horas, minutos) {
 
 function convertirTiempo() {
     const hhmm = document.getElementById('hhmm').value;
-
-    if (hhmm.length !== 4 || isNaN(hhmm)) {
-        alert('Por favor ingresa un tiempo válido en formato HHMM.');
-        return;
-    }
-
     const horas = Math.floor(hhmm / 100);
     const minutos = hhmm % 100;
-
-    if (horas < 0 || horas > 23 || minutos < 0 || minutos > 59) {
-        alert('Por favor ingresa un tiempo válido en formato HHMM.');
-        return;
-    }
 
     const tiempo_decimal = convertir_a_decimal(horas, minutos);
     document.getElementById('resultado').innerText = `Tiempo de vuelo en decimal: ${tiempo_decimal.toFixed(1)}`;
 
-    // Guardar en el historial
-    const historial = JSON.parse(localStorage.getItem('historial')) || [];
-    historial.push(`HHMM: ${hhmm} => Decimal: ${tiempo_decimal.toFixed(1)}`);
-    localStorage.setItem('historial', JSON.stringify(historial));
+    // Añadir al historial
+    añadirAlHistorial(tiempo_decimal);
+}
+
+function añadirAlHistorial(tiempo_decimal) {
+    // Añadir el nuevo tiempo al historial
+    historial.push(tiempo_decimal);
+    
+    // Limitar el historial a 3 entradas
+    if (historial.length > 3) {
+        historial.shift(); // Eliminar el primer elemento
+    }
+
+    // Mostrar historial en la página
     mostrarHistorial();
 }
 
 function mostrarHistorial() {
-    const historial = JSON.parse(localStorage.getItem('historial')) || [];
-    const ul = document.getElementById('historial');
-    ul.innerHTML = '';
-    historial.forEach(item => {
+    const historialElemento = document.getElementById('historial');
+    historialElemento.innerHTML = ''; // Limpiar el historial actual
+
+    historial.forEach((item, index) => {
         const li = document.createElement('li');
-        li.textContent = item;
-        ul.appendChild(li);
+        li.className = 'list-group-item'; // Clase de Bootstrap para lista
+        li.textContent = `Conversión ${index + 1}: ${item.toFixed(1)} horas`;
+        historialElemento.appendChild(li);
     });
 }
-
-document.getElementById('convertirBtn').onclick = convertirTiempo;
-document.getElementById('toggleThemeBtn').onclick = function() {
-    document.body.classList.toggle('dark-theme');
-}
-
-// Cargar historial al cargar la página
-window.onload = mostrarHistorial;
