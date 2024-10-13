@@ -3,20 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conversor de Tiempo de Vuelo</title>
+    <title>Conversor de Tiempo de VueloOOOOO</title>
     <link rel="stylesheet" href="styles.css"> <!-- Vincula el CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Google Fonts -->
 </head>
 <body>
-    <h1>Conversor de Tiempo de Vuelo (HHMM a Libro de Vuelo)</h1>
-    <label for="hhmm">Ingresa el tiempo de vuelo en formato HHMM:</label>
-    <input type="text" id="hhmm" placeholder="Ej: 1232">
-    <button id="convertirBtn">Convertir</button>
-    
-    <h2 id="resultado"></h2>
-    <h3>Historial:</h3>
-    <ul id="historial"></ul>
+    <header>
+        <h1>Conversor de Tiempo de Vuelo (HHMM a Libro de Vuelo)</h1>
+    </header>
 
-    <button id="toggleThemeBtn">Cambiar a Tema Noche</button>
+    <main>
+        <label for="hhmm">Ingresa el tiempo de vuelo en formato HHMM:</label>
+        <input type="text" id="hhmm" placeholder="Ej: 1232">
+        <button id="convertirBtn">Convertir</button>
+        
+        <h2 id="resultado"></h2>
+        
+        <h3>Historial:</h3>
+        <ul id="historial"></ul>
+    </main>
+
+    <footer>
+        <button id="toggleThemeBtn">Cambiar a Tema Noche</button>
+    </footer>
 
     <script src="script.js"></script> <!-- Vincula el JavaScript -->
 </body>

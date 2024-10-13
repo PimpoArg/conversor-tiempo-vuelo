@@ -1,51 +1,58 @@
-/* General Styles */
+/* Estilos Generales */
 body {
-    font-family: 'Arial', sans-serif; /* Fuente sencilla */
-    background-color: #f9f9f9; /* Fondo claro */
+    font-family: 'Roboto', sans-serif; /* Fuente moderna */
+    background-color: #f4f8fb; /* Color de fondo suave */
     color: #333; /* Color del texto */
     margin: 0;
-    padding: 40px;
-    line-height: 1.6; /* Espaciado entre líneas */
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* Estilo del encabezado */
+header {
+    margin-bottom: 40px; /* Espacio inferior */
 }
 
 h1 {
-    color: #005f73; /* Color del título */
-    font-size: 2em; /* Tamaño del título */
-    margin-bottom: 20px; /* Margen inferior */
+    color: #003785; /* Color del título */
+    font-size: 2.5em; /* Tamaño grande */
 }
 
+/* Estilo de los subtítulos */
 h2 {
     color: #005f73; /* Color para subtítulos */
-    font-size: 1.5em; /* Tamaño del subtítulo */
+    font-size: 1.8em; /* Tamaño del subtítulo */
     margin-top: 30px; /* Margen superior */
-    margin-bottom: 10px; /* Margen inferior */
 }
 
+/* Estilo de las etiquetas y entradas */
 label {
-    display: block; /* Hace que la etiqueta ocupe todo el ancho */
-    margin: 10px 0; /* Margen vertical */
+    margin-top: 20px; /* Espacio superior */
+    display: block; /* Que la etiqueta ocupe todo el ancho */
 }
 
+/* Entradas */
 input[type="text"] {
     width: 100%; /* Ancho completo */
     padding: 10px; /* Relleno */
-    border: 1px solid #ddd; /* Borde claro */
+    border: 2px solid #1465bb; /* Borde azul */
     border-radius: 5px; /* Bordes redondeados */
     margin-bottom: 20px; /* Margen inferior */
     transition: border-color 0.3s; /* Transición suave */
 }
 
+/* Cambios en el borde al enfocar */
 input[type="text"]:focus {
-    border-color: #005f73; /* Color del borde al enfocar */
+    border-color: #2196f3; /* Color de borde al enfocar */
     outline: none; /* Sin contorno */
 }
 
+/* Botones */
 button {
-    background-color: #008891; /* Color de fondo del botón */
-    color: white; /* Color del texto */
+    background-color: #2196f3; /* Color del botón */
+    color: white; /* Color del texto del botón */
     border: none; /* Sin borde */
-    padding: 12px 20px; /* Relleno del botón */
-    cursor: pointer; /* Cursor pointer */
+    padding: 12px 20px; /* Relleno */
     border-radius: 5px; /* Bordes redondeados */
     font-size: 16px; /* Tamaño de texto */
     transition: background-color 0.3s; /* Transición suave */
@@ -53,9 +60,10 @@ button {
 }
 
 button:hover {
-    background-color: #005f73; /* Color del botón al pasar el ratón */
+    background-color: #005f73; /* Color de fondo al pasar el ratón */
 }
 
+/* Estilo para el historial */
 h3 {
     color: #333; /* Color para el historial */
     margin-top: 30px; /* Margen superior */
@@ -69,6 +77,7 @@ li {
     margin-bottom: 10px; /* Margen inferior para los elementos de la lista */
 }
 
+/* Estilo del tema oscuro */
 .dark-theme {
     background-color: #333; /* Fondo oscuro para el tema oscuro */
     color: white; /* Texto blanco en el tema oscuro */
