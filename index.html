@@ -4,24 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conversor de Tiempo de Vuelo</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css"> <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="styles.css"> <!-- Vincula el CSS -->
 </head>
 <body>
-    <div class="container mt-5">
-        <h1 class="text-center text-primary">Conversor de Tiempo de Vuelo (HHMM a Decimal)</h1>
-        <div class="form-group">
-            <label for="hhmm">Ingresa el tiempo de vuelo en formato HHMM:</label>
-            <input type="text" class="form-control" id="hhmm" placeholder="Ej: 1232">
-        </div>
-        <button class="btn btn-success btn-block" onclick="convertirTiempo()">Convertir</button>
-        
-        <h2 id="resultado" class="mt-4"></h2>
-    </div>
+    <h1>Conversor de Tiempo de Vuelo (HHMM a Decimal)</h1>
+    <label for="hhmm">Ingresa el tiempo de vuelo en formato HHMM:</label>
+    <input type="text" id="hhmm" placeholder="Ej: 1232">
+    <button id="convertirBtn">Convertir</button>
+    
+    <h2 id="resultado"></h2>
+    <h3>Historial:</h3>
+    <ul id="historial"></ul>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="script.js"></script>
+    <button id="toggleThemeBtn">Cambiar a Tema Oscuro</button>
+
+    <script src="script.js"></script> <!-- Vincula el JavaScript -->
 </body>
 </html>
