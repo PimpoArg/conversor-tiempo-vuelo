@@ -33,7 +33,7 @@ label {
 
 /* Entradas */
 input[type="text"] {
-    width: 100%; /* Ancho completo */
+    width: 70px; /* Ancho reducido, suficiente para 5 caracteres más margen */
     padding: 10px; /* Relleno */
     border: 2px solid #1465bb; /* Borde azul */
     border-radius: 5px; /* Bordes redondeados */
