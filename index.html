@@ -3,30 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conversor de Tiempo de Vuelo</title>
+    <title>Conversor de Tiempo de Vuelo - Just Fly</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Conversor de Tiempo de Vuelo (HHMM a Libro de Vuelo)</h1>
+    <!-- Encabezado principal -->
+    <header>
+        <div class="logo-container">
+            <img src="logo-avion.png" alt="Logo de avión" class="logo">
+            <h1>Just Fly</h1>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Conversor</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- Opción para ingresar el tiempo de vuelo manualmente -->
-    <label for="hhmm">Ingresa el tiempo de vuelo en formato HHMM:</label>
-    <input type="text" id="hhmm" placeholder="Ej: 1232">
-    <button id="convertirBtn">Convertir</button>
+    <!-- Contenido principal -->
+    <main>
+        <h2>Conversor de Tiempo de Vuelo</h2>
 
-    <!-- Nueva opción para ingresar horario de despegue y aterrizaje -->
-    <h2>O ingresa el horario de despegue y aterrizaje</h2>
-    <label for="despegue">Hora de despegue (HH:MM):</label>
-    <input type="time" id="despegue">
-    <label for="aterrizaje">Hora de aterrizaje (HH:MM):</label>
-    <input type="time" id="aterrizaje">
-    <button id="calcularTiempoVueloBtn">Calcular Tiempo de Vuelo</button>
+        <!-- Opción 1: Ingresar tiempo de vuelo directamente -->
+        <section>
+            <h3>Opción 1: Ingresa el tiempo de vuelo en formato HHMM</h3>
+            <label for="hhmm">Tiempo de vuelo (HHMM):</label>
+            <input type="text" id="hhmm" placeholder="Ej: 1232">
+            <button id="convertirBtn">Convertir</button>
+        </section>
 
-    <h2 id="resultado"></h2>
-    <h3>Historial:</h3>
-    <ul id="historial"></ul>
+        <!-- Opción 2: Calcular tiempo de vuelo desde horarios -->
+        <section>
+            <h3>Opción 2: Ingresa horario de despegue y aterrizaje</h3>
+            <label for="despegue">Hora de despegue:</label>
+            <input type="time" id="despegue">
+            <label for="aterrizaje">Hora de aterrizaje:</label>
+            <input type="time" id="aterrizaje">
+            <button id="calcularTiempoBtn">Calcular Tiempo de Vuelo</button>
+        </section>
 
-    <button id="toggleThemeBtn">Cambiar a Tema Noche</button>
+        <h3 id="resultado"></h3>
+        <h3>Historial:</h3>
+        <ul id="historial"></ul>
+
+        <button id="toggleThemeBtn">Cambiar a Tema Noche</button>
+    </main>
 
     <script src="script.js"></script>
 </body>

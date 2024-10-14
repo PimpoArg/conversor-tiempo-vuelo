@@ -1,102 +1,91 @@
-/* Estilos Generales */
+/* General Styles */
 body {
-    font-family: 'Roboto', sans-serif; /* Fuente moderna */
-    background-color: #f4f8fb; /* Color de fondo suave */
-    color: #333; /* Color del texto */
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
     margin: 0;
-    padding: 20px;
+    padding: 0;
     line-height: 1.6;
 }
 
-/* Estilo del encabezado */
+/* Header Styles */
 header {
-    margin-bottom: 40px; /* Espacio inferior */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #003785;
+    padding: 20px;
+    color: white;
 }
 
-h1 {
-    color: #003785; /* Color del título */
-    font-size: 2.5em; /* Tamaño grande */
+.logo-container {
+    display: flex;
+    align-items: center;
 }
 
-/* Estilo de los subtítulos */
+.logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #b9ffff;
+}
+
+/* Main Content */
+main {
+    padding: 40px;
+    background-color: #f9f9f9;
+}
+
 h2 {
-    color: #005f73; /* Color para subtítulos */
-    font-size: 1.8em; /* Tamaño del subtítulo */
-    margin-top: 30px; /* Margen superior */
+    color: #1465bb;
 }
 
-/* Estilo de las etiquetas y entradas */
-label {
-    margin-top: 20px; /* Espacio superior */
-    display: block; /* Que la etiqueta ocupe todo el ancho */
-}
-
-/* Entradas */
 input[type="text"] {
-    width: 70px; /* Ancho reducido, suficiente para 5 caracteres más margen */
-    padding: 10px; /* Relleno */
-    border: 2px solid #1465bb; /* Borde azul */
-    border-radius: 5px; /* Bordes redondeados */
-    margin-bottom: 20px; /* Margen inferior */
-    transition: border-color 0.3s; /* Transición suave */
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
 }
 
-/* Cambios en el borde al enfocar */
-input[type="text"]:focus {
-    border-color: #2196f3; /* Color de borde al enfocar */
-    outline: none; /* Sin contorno */
-}
-
-/* Botones */
 button {
-    background-color: #2196f3; /* Color del botón */
-    color: white; /* Color del texto del botón */
-    border: none; /* Sin borde */
-    padding: 12px 20px; /* Relleno */
-    border-radius: 5px; /* Bordes redondeados */
-    font-size: 16px; /* Tamaño de texto */
-    transition: background-color 0.3s; /* Transición suave */
-    display: inline-block; /* Para el espaciado */
+    background-color: #008891;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 button:hover {
-    background-color: #005f73; /* Color de fondo al pasar el ratón */
+    background-color: #005f73;
 }
 
-/* Estilo para el historial */
-h3 {
-    color: #333; /* Color para el historial */
-    margin-top: 30px; /* Margen superior */
-}
-
+/* Historial */
 ul {
-    padding-left: 20px; /* Relleno a la izquierda */
+    list-style: none;
 }
 
 li {
-    margin-bottom: 10px; /* Margen inferior para los elementos de la lista */
-}
-
-/* Estilo del tema oscuro */
-.dark-theme {
-    background-color: #333; /* Fondo oscuro para el tema oscuro */
-    color: white; /* Texto blanco en el tema oscuro */
-}
-
-.dark-theme button {
-    background-color: #555; /* Botón en tema oscuro */
-}
-
-input[type="time"] {
-    width: auto;
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
     margin-bottom: 10px;
-    transition: border-color 0.3s;
 }
 
-input[type="time"]:focus {
-    border-color: #005f73;
-    outline: none;
+.dark-theme {
+    background-color: #333;
+    color: white;
 }
