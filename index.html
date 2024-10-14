@@ -3,30 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conversor de Tiempo de VueloOOOOO</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Vincula el CSS -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Google Fonts -->
+    <title>Conversor de Tiempo de Vuelo</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Conversor de Tiempo de Vuelo (HHMM a Libro de Vuelo)</h1>
-    </header>
+    <h1>Conversor de Tiempo de Vuelo (HHMM a Libro de Vuelo)</h1>
 
-    <main>
-        <label for="hhmm">Ingresa el tiempo de vuelo en formato HHMM:</label>
-        <input type="text" id="hhmm" placeholder="Ej: 1232">
-        <button id="convertirBtn">Convertir</button>
-        
-        <h2 id="resultado"></h2>
-        
-        <h3>Historial:</h3>
-        <ul id="historial"></ul>
-    </main>
+    <!-- Opción para ingresar el tiempo de vuelo manualmente -->
+    <label for="hhmm">Ingresa el tiempo de vuelo en formato HHMM:</label>
+    <input type="text" id="hhmm" placeholder="Ej: 1232">
+    <button id="convertirBtn">Convertir</button>
 
-    <footer>
-        <button id="toggleThemeBtn">Cambiar a Tema nooo</button>
-    </footer>
+    <!-- Nueva opción para ingresar horario de despegue y aterrizaje -->
+    <h2>O ingresa el horario de despegue y aterrizaje</h2>
+    <label for="despegue">Hora de despegue (HH:MM):</label>
+    <input type="time" id="despegue">
+    <label for="aterrizaje">Hora de aterrizaje (HH:MM):</label>
+    <input type="time" id="aterrizaje">
+    <button id="calcularTiempoVueloBtn">Calcular Tiempo de Vuelo</button>
 
-    <script src="script.js"></script> <!-- Vincula el JavaScript -->
+    <h2 id="resultado"></h2>
+    <h3>Historial:</h3>
+    <ul id="historial"></ul>
+
+    <button id="toggleThemeBtn">Cambiar a Tema Noche</button>
+
+    <script src="script.js"></script>
 </body>
 </html>

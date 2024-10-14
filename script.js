@@ -35,15 +35,41 @@ function convertirTiempo() {
     const tiempo_decimal = convertir_a_decimal(horas, minutos);
     document.getElementById('resultado').innerText = `Tiempo de vuelo en decimal: ${tiempo_decimal.toFixed(1)}`;
 
-    // Guardar en el historial
-    const historial = JSON.parse(localStorage.getItem('historial')) || [];
-    historial.push(`HHMM: ${hhmm} => Decimal: ${tiempo_decimal.toFixed(1)}`);
-    
-    // Limitar el historial a un máximo de 3 entradas
-    if (historial.length > 3) {
-        historial.shift(); // Elimina la entrada más antigua
+    agregarHistorial(`HHMM: ${hhmm} => Decimal: ${tiempo_decimal.toFixed(1)}`);
+}
+
+function calcularTiempoVuelo() {
+    const despegue = document.getElementById('despegue').value;
+    const aterrizaje = document.getElementById('aterrizaje').value;
+
+    if (!despegue || !aterrizaje) {
+        alert('Por favor ingresa ambos horarios.');
+        return;
     }
-    
+
+    const [horasDespegue, minutosDespegue] = despegue.split(':').map(Number);
+    const [horasAterrizaje, minutosAterrizaje] = aterrizaje.split(':').map(Number);
+
+    // Calcular la diferencia en minutos
+    let diferenciaMinutos = (horasAterrizaje * 60 + minutosAterrizaje) - (horasDespegue * 60 + minutosDespegue);
+
+    if (diferenciaMinutos < 0) {
+        // Si la diferencia es negativa, significa que el vuelo pasó la medianoche
+        diferenciaMinutos += 24 * 60;
+    }
+
+    const horasVuelo = Math.floor(diferenciaMinutos / 60);
+    const minutosVuelo = diferenciaMinutos % 60;
+
+    const tiempo_decimal = convertir_a_decimal(horasVuelo, minutosVuelo);
+    document.getElementById('resultado').innerText = `Tiempo de vuelo en decimal: ${tiempo_decimal.toFixed(1)}`;
+
+    agregarHistorial(`Despegue: ${despegue}, Aterrizaje: ${aterrizaje} => Decimal: ${tiempo_decimal.toFixed(1)}`);
+}
+
+function agregarHistorial(entry) {
+    const historial = JSON.parse(localStorage.getItem('historial')) || [];
+    historial.push(entry);
     localStorage.setItem('historial', JSON.stringify(historial));
     mostrarHistorial();
 }
@@ -52,27 +78,18 @@ function mostrarHistorial() {
     const historial = JSON.parse(localStorage.getItem('historial')) || [];
     const ul = document.getElementById('historial');
     ul.innerHTML = '';
-    
-    // Mostrar solo hasta 3 entradas
-    const maxEntries = Math.min(historial.length, 3); // Se asegura de que no se muestren más de 3
-    for (let i = 0; i < maxEntries; i++) {
+    historial.forEach(item => {
         const li = document.createElement('li');
-        li.textContent = historial[i];
+        li.textContent = item;
         ul.appendChild(li);
-    }
+    });
 }
 
 document.getElementById('convertirBtn').onclick = convertirTiempo;
+document.getElementById('calcularTiempoVueloBtn').onclick = calcularTiempoVuelo;
 document.getElementById('toggleThemeBtn').onclick = function() {
     document.body.classList.toggle('dark-theme');
 }
-
-// Escuchar el evento 'keypress' en el campo de entrada
-document.getElementById('hhmm').addEventListener('keypress', function(event) {
-    if (event.key === 'Enter') { // Verifica si la tecla presionada es 'Enter'
-        convertirTiempo(); // Llama a la función de conversión
-    }
-});
 
 // Cargar historial al cargar la página
 window.onload = mostrarHistorial;

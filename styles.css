@@ -86,3 +86,17 @@ li {
 .dark-theme button {
     background-color: #555; /* Botón en tema oscuro */
 }
+
+input[type="time"] {
+    width: auto;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: border-color 0.3s;
+}
+
+input[type="time"]:focus {
+    border-color: #005f73;
+    outline: none;
+}
